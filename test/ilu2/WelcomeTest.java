@@ -27,11 +27,20 @@ class WelcomeTest {
 	@Test
 	void helloTwoPeople() {
 		assertEquals(Welcome.welcome("amy,bob"), "Hello, Amy, Bob");
+		assertNotEquals(Welcome.welcome("Amy,Bob"), "Hello, Amy");
+		assertEquals(Welcome.welcome("Amy,Bob"), "Hello, Amy, Bob");
 	}
 	
 	@Test
 	void helloCrowd() {
 		assertEquals(Welcome.welcome("Amy,bob,jerry"), "Hello, Amy, Bob, Jerry");
+		assertNotEquals(Welcome.welcome("Amy,Bob,Jerry"), "Hello, Amy");
+	}
+	
+	@Test
+	void helloRandomCrowd() {
+		assertEquals(Welcome.welcome("Amy, BOB, Jerry"),"Hello, Amy, Jerry. AND HELLO, BOB!");
+		assertNotEquals(Welcome.welcome("Amy,bob,jerry"),"Hello, Amy, Jerry. AND HELLO, BOB!");
 	}
 
 
