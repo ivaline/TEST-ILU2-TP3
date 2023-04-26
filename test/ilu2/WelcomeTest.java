@@ -52,5 +52,10 @@ class WelcomeTest {
 		//aussi je pense que apres HELLO il faut avoir un "," mais je toujours l'enleve dans le code
 		assertEquals(Welcome.welcome("bob, AMY, jerry, JACK"), "Hello, Bob and Jerry. AND HELLO AMY AND JACK !");
 	}
+	
+	@Test 
+	void helloEspaceInutile() {
+		assertEquals(Welcome.welcome("bob      , amy      "), "Hello, Bob and Amy");
+	}
 
 }
