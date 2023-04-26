@@ -16,10 +16,10 @@ public class Welcome {
 			 StringBuilder nameBig = new StringBuilder();
 			 nameSmall.append("Hello");
 			 nameBig.append(". AND HELLO");
-			 String dernMotSmall = null;
-			 int motsSmall = 0;
-			 int motsBig = 0;
-			 String dernMotBig = null;
+			 String dernMotSmall = null;//String pour le Hello jusqu'a AND HELLO
+			 int motsSmall = 0;//combien des noms sont pour le Hello
+			 int motsBig = 0;//combien des noms sont pour le HELLO
+			 String dernMotBig = null;// String a partir de AND HELLO
 			 for (String name1 : input.split(",")) {
 				 name1 = name1.trim();
 				 if(name1.toUpperCase() == name1) {
