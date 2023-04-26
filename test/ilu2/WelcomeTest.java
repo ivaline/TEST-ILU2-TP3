@@ -57,5 +57,11 @@ class WelcomeTest {
 	void helloEspaceInutile() {
 		assertEquals(Welcome.welcome("bob      , amy      "), "Hello, Bob and Amy");
 	}
+	
+	@Test
+	void helloSeveralNames() {
+		//il avait un "," dans ce test la juste apres le Bob, et ca marcge pas avec tous les tests d'avant
+		assertEquals(Welcome.welcome("bob, JERRY, amy, bob, JERRY, bob"),"Hello, Bob(x3) and Amy. AND HELLO, JERRY(x2) !");
+	}
 
 }
