@@ -60,8 +60,18 @@ class WelcomeTest {
 	
 	@Test
 	void helloSeveralNames() {
-		//il avait un "," dans ce test la juste apres le Bob, et ca marcge pas avec tous les tests d'avant
+		//il avait un "," apres Hello dans ce test la juste apres le Bob, et ca marcge pas avec tous les tests d'avant
 		assertEquals(Welcome.welcome("bob, JERRY, amy, bob, JERRY, bob"),"Hello, Bob(x3) and Amy. AND HELLO, JERRY(x2) !");
+	}
+	
+	@Test
+	void helloYoda() {
+		//J'ai rajouté le "," apres HELLO car de ce que j'ai compris il faut le mettre si on a 1 mot, si on a plus on l'enleve
+		// En plus, j'ai rajouté le "!" apres HELLO car on l'a pour tous les autres tests
+		//Aussi, on enleve le "," apres Yoda parce qu'on a "and"
+		assertEquals(Welcome.welcome("bob, yoda, amy, JERRY"), "Bob, Yoda and Amy, Hello. AND HELLO, JERRY !");
+		// ici X2->x2(les tests d'avant) + on enleve l'espace entre YODA et (x2)
+		assertEquals(Welcome.welcome("bob, YODA,amy,JERRY, YODA"),"Hello, Bob and Amy. AND YODA(x2) AND JERRY HELLO !");
 	}
 
 }

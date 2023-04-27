@@ -75,8 +75,13 @@ public class Welcome {
 					 int index = nameBig.indexOf(dernMotBig);
 					 nameBig.replace(index-2, nameBig.length(), " AND " + dernMotBig);
 					 //enlever le "," apres HELLO si on a plus que 1 nom
-					 nameBig.delete(11, 12);
+					 nameBig.delete(11, 12); 
 				 }
+				 int indexYODA = nameBig.indexOf("YODA");
+				 if(indexYODA!=-1) {
+					 nameBig.delete(5,11);
+					 nameBig.append(" HELLO");
+					 }
 				 nameBig.append(" !");
 			 }
 			 
@@ -84,6 +89,11 @@ public class Welcome {
 				 int index = nameSmall.indexOf(dernMotSmall);
 				 nameSmall.replace(index-2, nameSmall.length(), " and " + dernMotSmall);
 			 }	 
+			 int indexYoda = nameSmall.indexOf("Yoda");
+			 if(indexYoda!=-1) {
+				 nameSmall.delete(0,7);
+				 nameSmall.append(", Hello");
+			 }
 			 
 			 return nameSmall.toString() + nameBig.toString();
 	}
