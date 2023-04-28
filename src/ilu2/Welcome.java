@@ -70,7 +70,6 @@ public class Welcome {
 			 } 
 			 
 			 
-			 
 			 List<String> tableauNames = new ArrayList<>();
 			 List<Integer> countingNames = new ArrayList<>();
 			 tableOfNames(input, tableauNames,countingNames);
